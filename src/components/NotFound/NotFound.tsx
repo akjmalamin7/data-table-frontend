@@ -3,7 +3,7 @@ interface Props {
 }
 const NotFound = ({ message }: Props) => {
     return (
-        <H3>{message}</H3>
+        <h3>{message}</h3>
     )
 }
 

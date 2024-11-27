@@ -1,13 +1,12 @@
 import { ProductSchema } from "../../schema/products.schema";
 
 interface Props {
-
     data: ProductSchema
 }
 const TableRow = ({ data }: Props) => {
     return (
         <>
-            {data.map((product: ProductSchema, index) => (
+            {Array.isArray(data) && data.map((product: ProductSchema, index) => (
                 <tr key={product._id}>
                     <td>{index + 1}</td>
                     <td>{product.image}</td>

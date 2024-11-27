@@ -9,10 +9,11 @@ import { Search } from "../components/search";
 import TableRow from "../components/tableRow";
 import { useProductListQuery } from "../redux/features/products/productAPIS";
 import { setAllProducts, setTotal } from "../redux/features/products/productSlice";
+import { AppDispatch } from "../redux/store/store";
 
 
 const ProductListPage = () => {
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
@@ -56,7 +57,11 @@ const ProductListPage = () => {
 
     let content = null;
     if (isLoading) content = <tr><td colSpan={14}> <DataTableLoader /></td></tr>
-    if (!isLoading && error) content = <tr> <td colSpan={14} ><ErrorMessage message={error.message} /></td> </tr>
+    if (!isLoading && error) content = <tr>
+        <td colSpan={14} >
+            <ErrorMessage message={(error as any)?.message || "Unknown error"} />
+        </td>
+    </tr>
     if (!isLoading && !error && data?.data.length === 0) content = <tr><td colSpan={14}></td></tr>
     if (!isLoading && !error && data?.data?.length > 0) content = <><TableRow data={data?.data} /></>
 
@@ -71,7 +76,7 @@ const ProductListPage = () => {
                                     <h3>Products</h3>
                                 </Col>
                                 <Col xs="7" md="5" lg="3">
-                                    <Search searchKey={searchKey} onSearch={handleSearch} />
+                                    <Search onSearch={handleSearch} />
                                 </Col>
                             </Row>
                         </Card.Header>
@@ -102,9 +107,8 @@ const ProductListPage = () => {
                         </Card.Body>
                         <Card.Footer>
                             <Pagination
-                                perPage={perPage}
+                                perPage={Number(perPage)}
                                 totalItems={data?.total || 0}
-                                pageNo={pageNoe}
                                 onPageChange={handlePageClick}
                                 onPerPageChange={handlePerPage}
                             />

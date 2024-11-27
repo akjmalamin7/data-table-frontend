@@ -1,14 +1,14 @@
 import react from '@vitejs/plugin-react';
-import path from "path";
+import { fileURLToPath, URL } from 'url';
 import { defineConfig } from 'vite';
 
 // https://vite.dev/config/
 export default defineConfig({
-    assetsInclude: ["**/*.png", "**/*.jpg", "**/*.jpeg"],
+  assetsInclude: ["**/*.png", "**/*.jpg", "**/*.jpeg"],
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
-})
+});

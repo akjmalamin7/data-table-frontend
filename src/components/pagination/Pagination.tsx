@@ -5,7 +5,6 @@ import "./pagination.css";
 interface PaginationProps {
     perPage: number;
     totalItems: number;
-    pageNo: number;
     onPageChange: (selectedItem: { selected: number }) => void;
     onPerPageChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
@@ -13,7 +12,6 @@ interface PaginationProps {
 const Pagination: React.FC<PaginationProps> = ({
     perPage,
     totalItems,
-    pageNo,
     onPageChange,
     onPerPageChange,
 }) => {
