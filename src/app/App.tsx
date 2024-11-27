@@ -1,10 +1,9 @@
-import { BrowserRouter as Router } from 'react-router-dom';
-import ProductListPage from "../pages/ProductListPage";
+import { RouterProvider } from "react-router-dom";
+
+import { router } from './routes/router';
 const App = () => {
     return (
-        <Router>
-            <ProductListPage />
-        </Router>
+        <RouterProvider router={router} />
     );
 };
 

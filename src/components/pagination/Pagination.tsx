@@ -21,6 +21,7 @@ const Pagination: React.FC<PaginationProps> = ({
                 <Form.Select
                     aria-label="Items per page"
                     value={perPage}
+                    className="option"
                     onChange={onPerPageChange}
                 >
                     <option value="3">3 Per page</option>

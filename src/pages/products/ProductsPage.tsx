@@ -1,18 +1,19 @@
+import PageHeader from "@/components/pageHeader";
 import { useEffect, useState } from "react";
 import { Card, Col, Container, Row, Table } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import DataTableLoader from "../components/dataTableloader";
-import ErrorMessage from "../components/errorMessage/ErrorMessage";
-import { Pagination } from "../components/pagination";
-import { Search } from "../components/search";
-import TableRow from "../components/tableRow";
-import { useProductListQuery } from "../redux/features/products/productAPIS";
-import { setAllProducts, setTotal } from "../redux/features/products/productSlice";
-import { AppDispatch } from "../redux/store/store";
+import DataTableLoader from "../../components/dataTableloader";
+import ErrorMessage from "../../components/errorMessage/ErrorMessage";
+import { Pagination } from "../../components/pagination";
+import { Search } from "../../components/search";
+import TableRow from "../../components/tableRow";
+import { useProductListQuery } from "../../redux/features/products/productAPIS";
+import { setAllProducts, setTotal } from "../../redux/features/products/productSlice";
+import { AppDispatch } from "../../redux/store/store";
 
 
-const ProductListPage = () => {
+const ProductsPage = () => {
     const dispatch: AppDispatch = useDispatch();
     const navigate = useNavigate();
     const location = useLocation();
@@ -68,12 +69,13 @@ const ProductListPage = () => {
     return (
         <Container style={{ maxWidth: "1320px", margin: "0 auto", marginTop: '50px' }} as={"div"}>
             <Row>
-                <Col xl>
+                <PageHeader pageTitle="Product List" buttonText1="Add Product" onButton1={() => navigate("/products/add")} />
+                <Col xl="12">
                     <Card>
                         <Card.Header>
                             <Row>
                                 <Col xs="5" md="7" lg="9">
-                                    <h3>Products</h3>
+                                    <h4 className="mt-2">Products</h4>
                                 </Col>
                                 <Col xs="7" md="5" lg="3">
                                     <Search onSearch={handleSearch} />
@@ -120,4 +122,4 @@ const ProductListPage = () => {
     );
 };
 
-export default ProductListPage;
+export default ProductsPage;

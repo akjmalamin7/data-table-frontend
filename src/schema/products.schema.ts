@@ -1,5 +1,4 @@
 export interface ProductSchema {
-    _id: string;
     name: string;
     price: string;
     specialPrice: string;

@@ -19,6 +19,8 @@
     outline: none;
     padding: 2px;
     color: #000000;
+    font-size: 14px;
+    font-weight: 550;
 
 }
 
@@ -37,6 +39,16 @@
 
 .page-link:focus {
     box-shadow: unset;
+}
+
+.option {
+    font-size: 14px !important;
+}
+
+.option:focus {
+    outline: none;
+    box-shadow: unset;
+    border: 1px solid #000000;
 }
 
 @media(min-width:500px) {

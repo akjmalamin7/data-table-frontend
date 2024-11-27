@@ -1,0 +1,16 @@
+.buttons {
+    display: flex;
+    justify-content: end;
+    gap: 12px
+}
+
+.back_button {
+    background-color: transparent !important;
+    color: #000000;
+    border: unset;
+    padding-left: 0px;
+}
+
+.back_button:hover {
+    color: #000000;
+}

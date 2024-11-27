@@ -1,3 +1,4 @@
+import { Image } from "react-bootstrap";
 import { ProductSchema } from "../../schema/products.schema";
 
 interface Props {
@@ -9,7 +10,9 @@ const TableRow = ({ data }: Props) => {
             {Array.isArray(data) && data.map((product: ProductSchema, index) => (
                 <tr key={product._id}>
                     <td>{index + 1}</td>
-                    <td>{product.image}</td>
+                    <td>
+                        <Image src={product.image} width={45} />
+                    </td>
                     <td>{product.name}</td>
                     <td>{product.price}</td>
                     <td>{product.specialPrice}</td>

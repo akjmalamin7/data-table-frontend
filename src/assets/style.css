@@ -1,8 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
+}
+
+body {
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 h1,
@@ -14,4 +22,43 @@ h6,
 p,
 ul {
     margin: 0px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 550;
+}
+
+h4 {
+    font-size: 16px;
+    font-weight: 550;
+}
+
+button {
+    font-size: 14px !important;
+}
+
+td,
+th {
+    font-size: 13px;
+}
+
+select option {
+    font-size: 12px !important;
+}
+
+.form-control {
+    font-size: 14px;
+    font-weight: 400 !important;
+}
+
+.form-control:focus {
+    box-shadow: unset;
+    outline: unset;
+    border-color: #000000;
+}
+
+.form-control::placeholder {
+    font-size: 14px;
+    font-weight: 400 !important;
 }
