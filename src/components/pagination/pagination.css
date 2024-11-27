@@ -1,0 +1,41 @@
+.pagination {
+    display: flex;
+    gap: 5px;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 0px;
+}
+
+.page-item:not(:first-child):not(:last-child) a {
+    width: auto !important;
+    height: auto !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-link {
+    box-shadow: unset;
+    outline: none;
+    padding: 2px;
+}
+
+.page-link:focus {
+    box-shadow: unset;
+}
+
+@media(min-width:500px) {
+    .pagination {
+        gap: 8px;
+    }
+
+    .page-link {
+        padding: 2px 4px;
+    }
+}
+
+@media(min-width:768px) {
+    .page-link {
+        padding: 5px 10px;
+    }
+}
