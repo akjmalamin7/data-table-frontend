@@ -1,6 +1,7 @@
 import PageHeader from "@/components/pageHeader";
+import ProductTable from "@/components/productTable";
 import { useEffect, useState } from "react";
-import { Card, Col, Container, Row, Table } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import DataTableLoader from "../../components/dataTableloader";
@@ -83,29 +84,7 @@ const ProductsPage = () => {
                             </Row>
                         </Card.Header>
                         <Card.Body>
-                            <Table striped bordered hover responsive>
-                                <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Image</th>
-                                        <th>Name</th>
-                                        <th>Price</th>
-                                        <th>Special Price</th>
-                                        <th>Category</th>
-                                        <th>Sub Category</th>
-                                        <th>Remark</th>
-                                        <th>Brand</th>
-                                        <th>Shop</th>
-                                        <th>Shop Name</th>
-                                        <th>Star</th>
-                                        <th>Product Code</th>
-                                        <th>Stock</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {content}
-                                </tbody>
-                            </Table>
+                            <ProductTable content={content} />
                         </Card.Body>
                         <Card.Footer>
                             <Pagination

@@ -1,0 +1,352 @@
+[{
+  "_id": {
+    "$oid": "674847acbeaeb5f39f7bedb9"
+  },
+  "name": "Creme Brulee - Creme Lipstick",
+  "price": "995",
+  "specialPrice": "920",
+  "image": "1732790184564.jpg",
+  "category": "Cosmetics",
+  "subcategory": "",
+  "remark": "Good product",
+  "brand": "Glossic",
+  "shop": "shop 1",
+  "shopName": "Lipistick house",
+  "star": "5",
+  "productCode": "200000",
+  "stock": "100",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732790188539"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732790188539"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "6748481dbeaeb5f39f7bedbd"
+  },
+  "name": "Makeup Powder Container",
+  "price": "3500",
+  "specialPrice": "3450",
+  "image": "1732790299289.jpg",
+  "category": "Cosmetics",
+  "subcategory": "",
+  "remark": "",
+  "brand": "Glossic",
+  "shop": "Next Shop",
+  "shopName": "Makeup corner",
+  "star": "5",
+  "productCode": "200001",
+  "stock": "20",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732790301485"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732790301485"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "674848a3beaeb5f39f7bedc1"
+  },
+  "name": "PONS mini backpack",
+  "price": "2100",
+  "specialPrice": "1820",
+  "image": "1732790434030.jpg",
+  "category": "Cosmetics",
+  "subcategory": "",
+  "remark": "",
+  "brand": "Glossic",
+  "shop": "Makeup",
+  "shopName": "Makeup lady",
+  "star": "5",
+  "productCode": "200002",
+  "stock": "15",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732790435607"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732790435607"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67484932beaeb5f39f7bedc7"
+  },
+  "name": "Dakine Cinturón de riel",
+  "price": "4000",
+  "specialPrice": "3600",
+  "image": "1732790521339.jpg",
+  "category": "Belt",
+  "subcategory": "Belt",
+  "remark": "",
+  "brand": "Cooper Belt",
+  "shop": "Belt",
+  "shopName": "Belt fashion",
+  "star": "5",
+  "productCode": "200003",
+  "stock": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732790578669"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732790578669"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "674849e7beaeb5f39f7bedd3"
+  },
+  "name": "JUKMO Tactical Belt for Men",
+  "price": "2100",
+  "specialPrice": "1890",
+  "image": "1732790758536.jpg",
+  "category": "Belt",
+  "subcategory": "Belt",
+  "remark": "",
+  "brand": "Cooper Belt",
+  "shop": "Next Shop",
+  "shopName": "Next Shop",
+  "star": "5",
+  "productCode": "200004",
+  "stock": "10",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732790759563"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732790759563"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67484a53beaeb5f39f7bedd9"
+  },
+  "name": "Hero Honda Hunk Bike Price",
+  "price": "258000",
+  "specialPrice": "250010",
+  "image": "1732790866533.jpg",
+  "category": "Bike",
+  "subcategory": "Bike",
+  "remark": "Fresh",
+  "brand": "Honda",
+  "shop": "Next Shop",
+  "shopName": "Next Shop",
+  "star": "4",
+  "productCode": "200005",
+  "stock": "5",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732790867659"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732790867659"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67484a98beaeb5f39f7beddf"
+  },
+  "name": "Hero Honda Hunk ",
+  "price": "150000",
+  "specialPrice": "140000",
+  "image": "1732790935536.jpg",
+  "category": "Bike",
+  "subcategory": "Bike",
+  "remark": "",
+  "brand": "Honda",
+  "shop": "Next Shop",
+  "shopName": "Next Shop",
+  "star": "5",
+  "productCode": "200006",
+  "stock": "2",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732790936722"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732790936722"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67484af5beaeb5f39f7bede7"
+  },
+  "name": "Jacket",
+  "price": "3000",
+  "specialPrice": "2850",
+  "image": "1732791023270.jpg",
+  "category": "Dress",
+  "subcategory": "Dress",
+  "remark": "",
+  "brand": "Easy",
+  "shop": "Easy",
+  "shopName": "Easy",
+  "star": "5",
+  "productCode": "200007",
+  "stock": "10",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732791029010"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732791029010"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67484b31beaeb5f39f7beded"
+  },
+  "name": "Hoodi",
+  "price": "1200",
+  "specialPrice": "1190",
+  "image": "1732791088154.jpg",
+  "category": "Dress",
+  "subcategory": "Dress",
+  "remark": "",
+  "brand": "Febri life",
+  "shop": "Febri",
+  "shopName": "Febri like",
+  "star": "5",
+  "productCode": "200008",
+  "stock": "8",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732791089196"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732791089196"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67484bc4beaeb5f39f7bedf5"
+  },
+  "name": "New Model Sofa",
+  "price": "50000",
+  "specialPrice": "49200",
+  "image": "1732791235238.jpg",
+  "category": "Furniture",
+  "subcategory": "Furniture",
+  "remark": "",
+  "brand": "Wood mart",
+  "shop": "Wood",
+  "shopName": "Wood mart",
+  "star": "5",
+  "productCode": "200009",
+  "stock": "4",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732791236436"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732791236436"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67484c04beaeb5f39f7bedf9"
+  },
+  "name": "Soft Bed",
+  "price": "35000",
+  "specialPrice": "34500",
+  "image": "1732791299480.jpg",
+  "category": "Furniture",
+  "subcategory": "Furniture",
+  "remark": "",
+  "brand": "Hatil",
+  "shop": "Hatil",
+  "shopName": "Hatil corner",
+  "star": "5",
+  "productCode": "200010",
+  "stock": "6",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732791300685"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732791300685"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67484c3dbeaeb5f39f7bedfd"
+  },
+  "name": "Will Stone",
+  "price": "750",
+  "specialPrice": "720",
+  "image": "1732791356449.jpg",
+  "category": "Perfume",
+  "subcategory": "Perfume",
+  "remark": "",
+  "brand": "Omega",
+  "shop": "Omega",
+  "shopName": "Omega",
+  "star": "5",
+  "productCode": "200011",
+  "stock": "8",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732791357561"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732791357561"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67484c85beaeb5f39f7bee01"
+  },
+  "name": "Men soft cold",
+  "price": "1200",
+  "specialPrice": "1100",
+  "image": "1732791427885.jpg",
+  "category": "Perfume",
+  "subcategory": "Perfume",
+  "remark": "",
+  "brand": "Ardell",
+  "shop": "Perfume shop",
+  "shopName": "Perfume Shop",
+  "star": "5",
+  "productCode": "200012",
+  "stock": "12",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732791429332"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732791429332"
+    }
+  }
+}]

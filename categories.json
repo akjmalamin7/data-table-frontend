@@ -1,0 +1,209 @@
+[{
+  "_id": {
+    "$oid": "67483c3b578be02d1fa21ecf"
+  },
+  "name": "Cosmetics",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787259134"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787259134"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483c92578be02d1fa21ed3"
+  },
+  "name": "Belt",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787346352"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787346352"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483cd8578be02d1fa21ed5"
+  },
+  "name": "Bike",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787416864"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787416864"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483ce9578be02d1fa21ed7"
+  },
+  "name": "Dress",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787433356"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787433356"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483cfc578be02d1fa21ed9"
+  },
+  "name": "Electronics",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787452909"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787452909"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483d07578be02d1fa21edb"
+  },
+  "name": "Furniture",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787463729"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787463729"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483d20578be02d1fa21edd"
+  },
+  "name": "Lighter",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787488394"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787488394"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483d29578be02d1fa21edf"
+  },
+  "name": "Perfume",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787497576"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787497576"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483d33578be02d1fa21ee1"
+  },
+  "name": "Plant",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787507845"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787507845"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483d40578be02d1fa21ee3"
+  },
+  "name": "Shoes",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787520449"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787520449"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483d49578be02d1fa21ee5"
+  },
+  "name": "Table",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787529650"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787529650"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483d56578be02d1fa21ee7"
+  },
+  "name": "Wallet",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787542391"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787542391"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "67483d5f578be02d1fa21ee9"
+  },
+  "name": "Watch",
+  "image": "",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1732787551009"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1732787551009"
+    }
+  }
+}]
