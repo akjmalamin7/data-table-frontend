@@ -7,8 +7,8 @@ const ImageViewer = ({ image }: Props) => {
   return (
     <>
       {image && (
-        <Col xs="12" className="text-center mt-3">
-          <div style={{ width: "100px", height: "100px", margin: "auto" }}>
+        <Col xs="12" className="text-center">
+          <div style={{ width: "100px", height: "100px" }}>
             <Card>
               <Card.Body>
                 <img

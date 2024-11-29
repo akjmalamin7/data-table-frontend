@@ -1,6 +1,6 @@
-import AddProductForm from "@/components/addProductForm";
-import ErrorMessage from "@/components/errorMessage/ErrorMessage";
-import PageHeader from "@/components/pageHeader";
+import ErrorMessage from "@/components/common/errorMessage/ErrorMessage";
+import PageHeader from "@/components/common/pageHeader";
+import AddProductForm from "@/components/pages/addProduct/addProductForm";
 import { useProductAddMutation } from "@/redux/features/products/productAPIS";
 import { ChangeEvent, useState } from "react";
 import { Container } from "react-bootstrap";

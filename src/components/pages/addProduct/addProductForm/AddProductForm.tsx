@@ -1,10 +1,10 @@
 import ReuseableInput from "@/shared/ui/reuseableInput";
 import { ChangeEvent, FormEvent } from "react";
 import { Button, Col, Row } from "react-bootstrap";
-import BrandDropdown from "../brandDropdown";
-import CategoryDropdown from "../categoryDropdown";
-import { ImageUpload } from "../imageUpload";
-import ImageViewer from "../ImageViewer";
+import BrandDropdown from "../../../common/brandDropdown";
+import CategoryDropdown from "../../../common/categoryDropdown";
+import { ImageUpload } from "../../../common/imageUpload";
+import ImageViewer from "../../../common/ImageViewer";
 import style from "./addProductForm.module.css";
 interface Props {
   categoryValues?: string;

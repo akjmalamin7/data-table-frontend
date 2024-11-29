@@ -23,12 +23,13 @@ const ReuseableSelect = ({
   onSelect,
 }: Props) => {
   return (
-    <Col xs={xsCol} md={mdCol} lg={lgCol} size={size} className={className}>
+    <Col xs={xsCol} md={mdCol} lg={lgCol} className={className}>
       <Form.Select
         name={name}
         onChange={onSelect}
         value={selectedValue}
         className={className}
+        size={size}
       >
         {children}
       </Form.Select>

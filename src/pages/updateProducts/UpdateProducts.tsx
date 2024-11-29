@@ -1,35 +1,20 @@
-import ErrorMessage from "@/components/errorMessage/ErrorMessage";
-import PageHeader from "@/components/pageHeader";
-import PageLoader from "@/components/pageLoader";
+import ErrorMessage from "@/components/common/errorMessage/ErrorMessage";
+import PageHeader from "@/components/common/pageHeader";
+import PageLoader from "@/components/common/pageLoader";
+import UpdateProductForm from "@/components/pages/updateProductForm";
 import {
   useProductDetailsQuery,
   useProductUpdateMutation,
 } from "@/redux/features/products/productAPIS";
-import { ProductSchema } from "@/schema/products.schema";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { Button, Col, Container, Form, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-
-const INIT_DATA: ProductSchema = {
-  name: "",
-  price: "",
-  specialPrice: "",
-  image: "",
-  category: "",
-  subcategory: "",
-  remark: "",
-  brand: "",
-  shop: "",
-  shopName: "",
-  star: "",
-  productCode: "",
-  stock: "",
-};
+import { INIT_ADD_PRODUCT_DATA } from "../addProducts/addProdcuts.schema";
 
 const UpdateProducts = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  const [values, setValues] = useState(INIT_DATA);
+  const [values, setValues] = useState(INIT_ADD_PRODUCT_DATA);
   const [productUpdate, { isLoading }] = useProductUpdateMutation();
   const {
     data: product,
@@ -77,155 +62,16 @@ const UpdateProducts = () => {
       as="div"
     >
       <PageHeader
-        pageTitle="Add Products"
+        pageTitle="Update Products"
         buttonText1="Product list"
         onButton1={() => navigate("/products")}
       />
-      <form onSubmit={handleSubmit}>
-        <Row>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.name}
-              name="name"
-              onChange={handleChange}
-              placeholder="Product name"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.price}
-              name="price"
-              onChange={handleChange}
-              placeholder="Price"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.specialPrice}
-              name="specialPrice"
-              onChange={handleChange}
-              placeholder="Special price"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.category}
-              name="category"
-              onChange={handleChange}
-              placeholder="Category"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.subcategory}
-              name="subcategory"
-              onChange={handleChange}
-              placeholder="Sub category"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.remark}
-              name="remark"
-              onChange={handleChange}
-              placeholder="Remark"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.brand}
-              name="brand"
-              onChange={handleChange}
-              placeholder="brand"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.shop}
-              name="shop"
-              onChange={handleChange}
-              placeholder="shop"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.shopName}
-              name="shopName"
-              onChange={handleChange}
-              placeholder="shop name"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.star}
-              name="star"
-              onChange={handleChange}
-              placeholder="Star"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.productCode}
-              name="productCode"
-              onChange={handleChange}
-              placeholder="Product code"
-            />
-          </Col>
-          <Col xs="12" md="6" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.stock}
-              name="stock"
-              onChange={handleChange}
-              placeholder="Stock"
-            />
-          </Col>
-          <Col xs="12" md="12" className="mb-3">
-            <Form.Control
-              size="lg"
-              type="text"
-              value={values.image}
-              name="image"
-              onChange={handleChange}
-              placeholder="Image"
-            />
-          </Col>
-          <Col className="d-flex justify-content-end mt-2">
-            <Button
-              variant="dark"
-              className="px-4"
-              size="md"
-              type="submit"
-              disabled={isLoading}
-            >
-              {isLoading ? "Updating..." : "Update Product"}
-            </Button>
-          </Col>
-        </Row>
-      </form>
+      <UpdateProductForm
+        values={values}
+        setValues={setValues}
+        handleChange={handleChange}
+        handleSubmit={handleSubmit}
+      />
     </Container>
   );
 };
