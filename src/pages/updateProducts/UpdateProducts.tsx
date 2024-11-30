@@ -1,4 +1,3 @@
-import ErrorMessage from "@/components/common/errorMessage/ErrorMessage";
 import PageHeader from "@/components/common/pageHeader";
 import PageLoader from "@/components/common/pageLoader";
 import UpdateProductForm from "@/components/pages/updateProductForm";
@@ -6,7 +5,7 @@ import {
   useProductDetailsQuery,
   useProductUpdateMutation,
 } from "@/redux/features/products/productAPIS";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import { INIT_ADD_PRODUCT_DATA } from "../addProducts/addProdcuts.schema";
@@ -20,6 +19,7 @@ const UpdateProducts = () => {
     data: product,
     isLoading: isProductLoading,
     error,
+    refetch,
   } = useProductDetailsQuery(id);
 
   useEffect(() => {
@@ -31,7 +31,9 @@ const UpdateProducts = () => {
     }
   }, [id, product]);
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setValues((prev) => ({
       ...prev,
@@ -53,7 +55,7 @@ const UpdateProducts = () => {
   if (error)
     return (
       <div>
-        <ErrorMessage message={error.message} />
+        <h3>Error</h3>
       </div>
     );
   return (

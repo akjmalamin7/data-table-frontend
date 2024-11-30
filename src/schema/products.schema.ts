@@ -1,4 +1,5 @@
 export interface ProductSchema {
+  _id: string;
   name: string;
   price: string;
   specialPrice: string;
@@ -14,10 +15,12 @@ export interface ProductSchema {
   stock: string;
 }
 export interface CategorySchema {
+  _id: string;
   name: string;
   image: string;
 }
 export interface BrandSchema {
+  _id: string;
   name: string;
   image: string;
 }

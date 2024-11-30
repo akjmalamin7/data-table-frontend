@@ -1,3 +1,4 @@
+import React from "react";
 import { Card, Col } from "react-bootstrap";
 
 interface Props {
@@ -7,7 +8,7 @@ const ImageViewer = ({ image }: Props) => {
   return (
     <>
       {image && (
-        <Col xs="12" className="text-center">
+        <Col xs={12} className="text-center">
           <div style={{ width: "100px", height: "100px" }}>
             <Card>
               <Card.Body>

@@ -1,15 +1,15 @@
 import React from "react";
 import { Col, Form } from "react-bootstrap";
 interface Props {
-  xsCol?: string;
-  mdCol?: string;
-  lgCol?: string;
+  xsCol?: number;
+  mdCol?: number;
+  lgCol?: number;
   className?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "lg";
   name?: string;
   selectedValue?: string;
   children?: React.ReactNode;
-  onSelect?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  onSelect?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 const ReuseableSelect = ({
   xsCol,

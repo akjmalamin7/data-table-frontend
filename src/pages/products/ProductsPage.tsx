@@ -1,15 +1,13 @@
 import PageHeader from "@/components/common/pageHeader";
 import ProductTable from "@/components/common/productTable";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
-import DataTableLoader from "../../components/common/dataTableloader";
-import ErrorMessage from "../../components/common/errorMessage/ErrorMessage";
 import { Pagination } from "../../components/common/pagination";
 import { Search } from "../../components/common/search";
-import TableRow from "../../components/common/tableRow";
 import { useProductListQuery } from "../../redux/features/products/productAPIS";
+
 import {
   setAllProducts,
   setTotal,
@@ -36,9 +34,9 @@ const ProductsPage = () => {
   });
 
   useEffect(() => {
-    if (data) {
-      dispatch(setTotal(data?.total));
-      dispatch(setAllProducts(data?.data));
+    if (data?.data && data?.total) {
+      dispatch(setTotal(data.total));
+      dispatch(setAllProducts(data.data));
     }
   }, [data, dispatch]);
   const handlePageClick = (selectedItem: { selected: number }) => {
@@ -59,37 +57,6 @@ const ProductsPage = () => {
     navigate(`?pageNo=${pageNoe}&perPage=${perPage}&searchKey=${value}`);
   };
 
-  let content = null;
-  if (isLoading)
-    content = (
-      <tr>
-        <td colSpan={14}>
-          {" "}
-          <DataTableLoader />
-        </td>
-      </tr>
-    );
-  if (!isLoading && error)
-    content = (
-      <tr>
-        <td colSpan={14}>
-          <ErrorMessage message={(error as any)?.message || "Unknown error"} />
-        </td>
-      </tr>
-    );
-  if (!isLoading && !error && data?.data.length === 0)
-    content = (
-      <tr>
-        <td colSpan={14}></td>
-      </tr>
-    );
-  if (!isLoading && !error && data?.data?.length > 0)
-    content = (
-      <>
-        <TableRow data={data?.data} />
-      </>
-    );
-
   return (
     <Container
       style={{ maxWidth: "1320px", margin: "0 auto", marginTop: "50px" }}
@@ -105,16 +72,20 @@ const ProductsPage = () => {
           <Card>
             <Card.Header>
               <Row>
-                <Col xs="5" md="7" lg="9">
+                <Col xs={5} md={7} lg={9}>
                   <h4 className="mt-2">Products</h4>
                 </Col>
-                <Col xs="7" md="5" lg="3">
+                <Col xs={7} md={5} lg={3}>
                   <Search onSearch={handleSearch} />
                 </Col>
               </Row>
             </Card.Header>
             <Card.Body>
-              <ProductTable content={content} />
+              <ProductTable
+                data={data?.data}
+                error={error}
+                isLoading={isLoading}
+              />
             </Card.Body>
             <Card.Footer>
               <Pagination

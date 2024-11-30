@@ -1,11 +1,13 @@
 import { useUploadImageMutation } from "@/redux/features/image/imageAPI";
 import ReuseableInput from "@/shared/ui/reuseableInput";
+import React from "react";
+
 interface Props {
   xsCol?: string;
   mdCol?: string;
   lgCol?: string;
   className?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "lg";
   name?: string;
   value?: string;
   setValue?: () => void;

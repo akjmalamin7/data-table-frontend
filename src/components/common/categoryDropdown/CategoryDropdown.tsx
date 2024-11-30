@@ -1,8 +1,11 @@
 import { useGetCategoriesListQuery } from "@/redux/features/categories/CategoriesApi";
-import { CategorySchema } from "@/schema/products.schema";
 import ReuseableSelect from "@/shared/ui/reuseableSelect";
-import ErrorMessage from "../errorMessage/ErrorMessage";
-
+import React from "react";
+interface CategoryProps {
+  _id?: string;
+  name?: string;
+  image?: string;
+}
 interface Props {
   defaultSelectText?: string;
   value?: string;
@@ -27,11 +30,7 @@ const CategoryDropdown = ({
   }
 
   if (error) {
-    return (
-      <ErrorMessage
-        message={error.message || "An unexpected error occurred."}
-      />
-    );
+    return <h3>An unexpected error occurred.</h3>;
   }
 
   if (data?.data.length === 0) {
@@ -41,15 +40,15 @@ const CategoryDropdown = ({
   return (
     <ReuseableSelect
       size="lg"
-      xsCol="12"
-      mdCol="6"
+      xsCol={12}
+      mdCol={6}
       name={name}
       onSelect={onChange}
       selectedValue={value}
       className={className}
     >
       <option value="">{defaultSelectText}</option>
-      {data?.data.map((category: CategorySchema) => (
+      {data?.data.map((category: CategoryProps) => (
         <option key={category._id} value={category.id}>
           {category.name}
         </option>

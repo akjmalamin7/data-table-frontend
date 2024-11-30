@@ -1,5 +1,5 @@
 import ReuseableInput from "@/shared/ui/reuseableInput";
-import { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, FormEvent } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import BrandDropdown from "../../../common/brandDropdown";
 import CategoryDropdown from "../../../common/categoryDropdown";
@@ -16,7 +16,7 @@ interface Props {
   handleChange?: (
     event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => void;
-  handleSubmit?: () => (event: FormEvent) => void;
+  handleSubmit: (e: FormEvent) => Promise<void>;
 }
 const AddProductForm = ({
   categoryValues,
@@ -32,24 +32,24 @@ const AddProductForm = ({
     <form onSubmit={handleSubmit}>
       <Row>
         <ReuseableInput
-          xsCol="12"
-          mdCol="6"
+          xsCol={12}
+          mdCol={6}
           className="mb-3"
           name="name"
           placeHolder="Product Name"
           onInput={handleChange}
         />
         <ReuseableInput
-          xsCol="12"
-          mdCol="6"
+          xsCol={12}
+          mdCol={6}
           className="mb-3"
           name="price"
           placeHolder="Price"
           onInput={handleChange}
         />
         <ReuseableInput
-          xsCol="12"
-          mdCol="6"
+          xsCol={12}
+          mdCol={6}
           className="mb-3"
           name="specialPrice"
           placeHolder="Special price"
@@ -70,8 +70,8 @@ const AddProductForm = ({
           onChange={handleChange}
         />
         <ReuseableInput
-          xsCol="12"
-          mdCol="6"
+          xsCol={12}
+          mdCol={6}
           className="mb-3"
           name="remark"
           placeHolder="Remark"
@@ -86,40 +86,40 @@ const AddProductForm = ({
         />
 
         <ReuseableInput
-          xsCol="12"
-          mdCol="6"
+          xsCol={12}
+          mdCol={6}
           className="mb-3"
           name="shop"
           placeHolder="Shop"
           onInput={handleChange}
         />
         <ReuseableInput
-          xsCol="12"
-          mdCol="6"
+          xsCol={12}
+          mdCol={6}
           className="mb-3"
           name="shopName"
           placeHolder="Shop name"
           onInput={handleChange}
         />
         <ReuseableInput
-          xsCol="12"
-          mdCol="6"
+          xsCol={12}
+          mdCol={6}
           className="mb-3"
           name="star"
           placeHolder="Star"
           onInput={handleChange}
         />
         <ReuseableInput
-          xsCol="12"
-          mdCol="6"
+          xsCol={12}
+          mdCol={6}
           className="mb-3"
           name="productCode"
           placeHolder="Product code"
           onInput={handleChange}
         />
         <ReuseableInput
-          xsCol="12"
-          mdCol="6"
+          xsCol={12}
+          mdCol={6}
           className="mb-3"
           name="stock"
           placeHolder="Stock"
@@ -134,7 +134,7 @@ const AddProductForm = ({
             mdCol="12"
             className="mb-3"
             name="image"
-            setValue={setValues}
+            setValue={() => setValues}
           />
         )}
 

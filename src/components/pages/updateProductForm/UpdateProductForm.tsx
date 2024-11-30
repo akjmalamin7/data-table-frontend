@@ -4,6 +4,7 @@ import { ImageUpload } from "@/components/common/imageUpload";
 import ImageViewer from "@/components/common/ImageViewer";
 import { ProductSchema } from "@/schema/products.schema";
 import ReuseableInput from "@/shared/ui/reuseableInput";
+import React, { ChangeEvent, FormEvent } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import style from "./updateProductForm.module.css";
 interface Props {
@@ -11,10 +12,8 @@ interface Props {
   imagePath?: string;
   values?: ProductSchema;
   setValues?: () => void;
-  handleChange?: (
-    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => void;
-  handleSubmit?: () => (event: FormEvent) => void;
+  handleChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  handleSubmit: (e: FormEvent) => Promise<void>;
 }
 const UpdateProductForm = ({
   values,
@@ -30,8 +29,8 @@ const UpdateProductForm = ({
       <form onSubmit={handleSubmit}>
         <Row>
           <ReuseableInput
-            xsCol="12"
-            mdCol="6"
+            xsCol={12}
+            mdCol={6}
             className="mb-3"
             name="name"
             value={values?.name}
@@ -39,8 +38,8 @@ const UpdateProductForm = ({
             onInput={handleChange}
           />
           <ReuseableInput
-            xsCol="12"
-            mdCol="6"
+            xsCol={12}
+            mdCol={6}
             className="mb-3"
             name="price"
             value={values?.price}
@@ -48,8 +47,8 @@ const UpdateProductForm = ({
             onInput={handleChange}
           />
           <ReuseableInput
-            xsCol="12"
-            mdCol="6"
+            xsCol={12}
+            mdCol={6}
             className="mb-3"
             name="specialPrice"
             value={values?.specialPrice}
@@ -74,8 +73,8 @@ const UpdateProductForm = ({
             onChange={handleChange}
           />
           <ReuseableInput
-            xsCol="12"
-            mdCol="6"
+            xsCol={12}
+            mdCol={6}
             size="lg"
             className="mb-3"
             name="remark"
@@ -91,8 +90,8 @@ const UpdateProductForm = ({
             onChange={handleChange}
           />
           <ReuseableInput
-            xsCol="12"
-            mdCol="6"
+            xsCol={12}
+            mdCol={6}
             className="mb-3"
             name="shop"
             value={values?.shop}
@@ -100,8 +99,8 @@ const UpdateProductForm = ({
             onInput={handleChange}
           />
           <ReuseableInput
-            xsCol="12"
-            mdCol="6"
+            xsCol={12}
+            mdCol={6}
             className="mb-3"
             name="shopName"
             value={values?.shopName}
@@ -109,8 +108,8 @@ const UpdateProductForm = ({
             onInput={handleChange}
           />
           <ReuseableInput
-            xsCol="12"
-            mdCol="6"
+            xsCol={12}
+            mdCol={6}
             className="mb-3"
             name="star"
             value={values?.star}
@@ -118,8 +117,8 @@ const UpdateProductForm = ({
             onInput={handleChange}
           />
           <ReuseableInput
-            xsCol="12"
-            mdCol="6"
+            xsCol={12}
+            mdCol={6}
             className="mb-3"
             name="productCode"
             value={values?.productCode}
@@ -127,8 +126,8 @@ const UpdateProductForm = ({
             onInput={handleChange}
           />
           <ReuseableInput
-            xsCol="12"
-            mdCol="6"
+            xsCol={12}
+            mdCol={6}
             className="mb-3"
             name="stock"
             value={values?.stock}
@@ -140,7 +139,7 @@ const UpdateProductForm = ({
             mdCol="12"
             className="mb-3"
             name="image"
-            setValue={setValues}
+            setValue={() => setValues}
           />
 
           <Col className="d-flex justify-content-end mt-2">

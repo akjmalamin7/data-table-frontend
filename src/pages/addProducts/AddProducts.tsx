@@ -2,7 +2,7 @@ import ErrorMessage from "@/components/common/errorMessage/ErrorMessage";
 import PageHeader from "@/components/common/pageHeader";
 import AddProductForm from "@/components/pages/addProduct/addProductForm";
 import { useProductAddMutation } from "@/redux/features/products/productAPIS";
-import { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, FormEvent, useState } from "react";
 import { Container } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { INIT_ADD_PRODUCT_DATA } from "./addProdcuts.schema";
@@ -11,7 +11,9 @@ const AddProducts = () => {
   const navigate = useNavigate();
   const [values, setValues] = useState(INIT_ADD_PRODUCT_DATA);
   const [productAdd, { isLoading, error }] = useProductAddMutation();
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { value, name } = e.target;
     setValues((prev) => ({
       ...prev,
@@ -19,7 +21,7 @@ const AddProducts = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     try {

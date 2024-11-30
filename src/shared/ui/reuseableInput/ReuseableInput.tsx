@@ -1,16 +1,16 @@
-import { ChangeEvent } from "react";
+import React, { ChangeEvent } from "react";
 import { Col, Form } from "react-bootstrap";
 interface Props {
-  xsCol?: string;
-  mdCol?: string;
-  lgCol?: string;
+  xsCol?: number;
+  mdCol?: number;
+  lgCol?: number;
   className?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "lg";
   type?: "text" | "number" | "email" | "password" | "file" | "date";
   name?: string;
   value?: string;
   placeHolder?: string;
-  onInput?: (event: ChangeEvent<HTMLInputElement>) => void;
+  onInput?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 const ReuseableInput = ({
   xsCol,
