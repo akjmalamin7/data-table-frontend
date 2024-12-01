@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import React, { ChangeEvent } from "react";
 import { Col, Form } from "react-bootstrap";
 interface Props {
   xsCol?: number;
