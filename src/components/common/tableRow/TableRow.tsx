@@ -6,7 +6,7 @@ import { ProductSchema } from "../../../schema/products.schema";
 import style from "./tableRow.module.css";
 
 interface Props {
-  serial?: number;
+  serial: number;
   product: ProductSchema;
 }
 const TableRow = ({ product, serial }: Props) => {

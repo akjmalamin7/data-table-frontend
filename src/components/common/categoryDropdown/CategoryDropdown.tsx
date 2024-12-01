@@ -10,16 +10,11 @@ interface Props {
   defaultSelectText?: string;
   value?: string;
   name?: string;
+  size?: "sm" | "lg";
   className?: string;
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
-const CategoryDropdown = ({
-  defaultSelectText,
-  value,
-  name,
-  className,
-  onChange,
-}: Props) => {
+const CategoryDropdown = ({ defaultSelectText, value, name, className, size = "lg", onChange }: Props) => {
   const { data, error, isLoading } = useGetCategoriesListQuery({
     pageNo: 1,
     perPage: 50,
@@ -39,7 +34,7 @@ const CategoryDropdown = ({
 
   return (
     <ReuseableSelect
-      size="lg"
+      size={size}
       xsCol={12}
       mdCol={6}
       name={name}
@@ -49,7 +44,7 @@ const CategoryDropdown = ({
     >
       <option value="">{defaultSelectText}</option>
       {data?.data.map((category: CategoryProps) => (
-        <option key={category._id} value={category.id}>
+        <option key={category._id} value={category._id}>
           {category.name}
         </option>
       ))}

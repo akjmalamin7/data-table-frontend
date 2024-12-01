@@ -1,4 +1,6 @@
 import { Product } from "@/redux/features/products/productSlice";
+import { SerializedError } from "@reduxjs/toolkit";
+import { FetchBaseQueryError } from "@reduxjs/toolkit/query";
 import React from "react";
 import { Table } from "react-bootstrap";
 import { ProductSchema } from "../../../schema/products.schema";
@@ -6,9 +8,9 @@ import DataTableLoader from "../dataTableloader";
 import TableRow from "../tableRow";
 
 interface Props {
-  error?: string;
+  error?: FetchBaseQueryError | SerializedError | undefined;
   isLoading?: boolean;
-  data?: Product[];
+  data: Product[];
 }
 const ProductTable = ({ data, error, isLoading }: Props) => {
   let content = null;
@@ -33,9 +35,7 @@ const ProductTable = ({ data, error, isLoading }: Props) => {
     content = (
       <>
         {Array.isArray(data) &&
-          data?.map((product: ProductSchema, index) => (
-            <TableRow key={product._id} product={product} serial={index} />
-          ))}
+          data?.map((product: ProductSchema, index) => <TableRow key={product._id} product={product} serial={index} />)}
       </>
     );
   }

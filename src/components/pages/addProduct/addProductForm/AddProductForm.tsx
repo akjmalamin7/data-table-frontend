@@ -1,5 +1,6 @@
+import { ProductSchema } from "@/schema/products.schema";
 import ReuseableInput from "@/shared/ui/reuseableInput";
-import React, { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import BrandDropdown from "../../../common/brandDropdown";
 import CategoryDropdown from "../../../common/categoryDropdown";
@@ -12,10 +13,8 @@ interface Props {
   brandValue?: string;
   isLoading?: boolean;
   imagePath?: string;
-  setValues?: () => void;
-  handleChange?: (
-    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => void;
+  setValues?: Dispatch<SetStateAction<ProductSchema>>;
+  handleChange?: (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
   handleSubmit: (e: FormEvent) => Promise<void>;
 }
 const AddProductForm = ({
@@ -39,14 +38,7 @@ const AddProductForm = ({
           placeHolder="Product Name"
           onInput={handleChange}
         />
-        <ReuseableInput
-          xsCol={12}
-          mdCol={6}
-          className="mb-3"
-          name="price"
-          placeHolder="Price"
-          onInput={handleChange}
-        />
+        <ReuseableInput xsCol={12} mdCol={6} className="mb-3" name="price" placeHolder="Price" onInput={handleChange} />
         <ReuseableInput
           xsCol={12}
           mdCol={6}
@@ -85,14 +77,7 @@ const AddProductForm = ({
           onChange={handleChange}
         />
 
-        <ReuseableInput
-          xsCol={12}
-          mdCol={6}
-          className="mb-3"
-          name="shop"
-          placeHolder="Shop"
-          onInput={handleChange}
-        />
+        <ReuseableInput xsCol={12} mdCol={6} className="mb-3" name="shop" placeHolder="Shop" onInput={handleChange} />
         <ReuseableInput
           xsCol={12}
           mdCol={6}
@@ -101,14 +86,7 @@ const AddProductForm = ({
           placeHolder="Shop name"
           onInput={handleChange}
         />
-        <ReuseableInput
-          xsCol={12}
-          mdCol={6}
-          className="mb-3"
-          name="star"
-          placeHolder="Star"
-          onInput={handleChange}
-        />
+        <ReuseableInput xsCol={12} mdCol={6} className="mb-3" name="star" placeHolder="Star" onInput={handleChange} />
         <ReuseableInput
           xsCol={12}
           mdCol={6}
@@ -117,35 +95,16 @@ const AddProductForm = ({
           placeHolder="Product code"
           onInput={handleChange}
         />
-        <ReuseableInput
-          xsCol={12}
-          mdCol={6}
-          className="mb-3"
-          name="stock"
-          placeHolder="Stock"
-          onInput={handleChange}
-        />
+        <ReuseableInput xsCol={12} mdCol={6} className="mb-3" name="stock" placeHolder="Stock" onInput={handleChange} />
 
         {imagePath ? (
           <ImageViewer image={imagePath} />
         ) : (
-          <ImageUpload
-            xsCol="12"
-            mdCol="12"
-            className="mb-3"
-            name="image"
-            setValue={() => setValues}
-          />
+          <ImageUpload xsCol={12} mdCol={6} className="mb-3" name="image" setValue={() => setValues} />
         )}
 
         <Col className="d-flex justify-content-end mt-2">
-          <Button
-            variant="dark"
-            className="px-4"
-            size="md"
-            type="submit"
-            disabled={isLoading}
-          >
+          <Button variant="dark" className="px-4" size="sm" type="submit" disabled={isLoading}>
             {isLoading ? "Adding..." : "Add"}
           </Button>
         </Col>

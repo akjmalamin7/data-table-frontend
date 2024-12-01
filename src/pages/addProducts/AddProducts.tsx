@@ -11,9 +11,7 @@ const AddProducts = () => {
   const navigate = useNavigate();
   const [values, setValues] = useState(INIT_ADD_PRODUCT_DATA);
   const [productAdd, { isLoading, error }] = useProductAddMutation();
-  const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { value, name } = e.target;
     setValues((prev) => ({
       ...prev,
@@ -31,17 +29,10 @@ const AddProducts = () => {
       console.error("Error adding product:", err);
     }
   };
-  if (error) return <ErrorMessage message={error.message} />;
+  if (error) return <ErrorMessage message={"Error"} />;
   return (
-    <Container
-      style={{ maxWidth: "940px", margin: "0 auto", marginTop: "50px" }}
-      as="div"
-    >
-      <PageHeader
-        pageTitle="Add Products"
-        buttonText1="Product list"
-        onButton1={() => navigate("/products")}
-      />
+    <Container style={{ maxWidth: "940px", margin: "0 auto", marginTop: "50px" }} as="div">
+      <PageHeader pageTitle="Add Products" buttonText1="Product list" onButton1={() => navigate("/products")} />
       <AddProductForm
         categoryValues={values.category}
         subcategoryValue={values.subcategory}

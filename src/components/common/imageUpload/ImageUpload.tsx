@@ -1,27 +1,20 @@
 import { useUploadImageMutation } from "@/redux/features/image/imageAPI";
+import { ProductSchema } from "@/schema/products.schema";
 import ReuseableInput from "@/shared/ui/reuseableInput";
-import React from "react";
+import React, { ChangeEvent } from "react";
+import ErrorMessage from "../errorMessage/ErrorMessage";
 
 interface Props {
-  xsCol?: string;
-  mdCol?: string;
-  lgCol?: string;
+  xsCol?: number;
+  mdCol?: number;
+  lgCol?: number;
   className?: string;
   size?: "sm" | "lg";
   name?: string;
   value?: string;
-  setValue?: () => void;
+  setValue?: (prev: ProductSchema) => void;
 }
-const ImageUpload = ({
-  xsCol,
-  mdCol,
-  lgCol,
-  size = "lg",
-  name,
-  value,
-  className,
-  setValue,
-}: Props) => {
+const ImageUpload = ({ xsCol, mdCol, lgCol, size = "lg", name, value, className, setValue }: Props) => {
   const [uploadImage, { isLoading, error }] = useUploadImageMutation();
   const handleImageUpload = async (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -30,13 +23,10 @@ const ImageUpload = ({
         const formData = new FormData();
         formData.append("image", file);
         const { data } = await uploadImage(formData).unwrap();
-
-        console.log("Image URL from server:", data?.imgUrl); // Debugging line
-
-        if (data?.imgUrl) {
+        if (data?.imgUrl && setValue) {
           setValue((prev) => ({
             ...prev,
-            image: data.imgUrl,
+            image: data?.imgUrl,
           }));
         }
       } catch (err) {
@@ -49,11 +39,7 @@ const ImageUpload = ({
   }
 
   if (error) {
-    return (
-      <ErrorMessage
-        message={error.message || "An unexpected error occurred."}
-      />
-    );
+    return <ErrorMessage message={"Error"} />;
   }
   return (
     <ReuseableInput

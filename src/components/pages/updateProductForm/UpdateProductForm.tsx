@@ -4,25 +4,19 @@ import { ImageUpload } from "@/components/common/imageUpload";
 import ImageViewer from "@/components/common/ImageViewer";
 import { ProductSchema } from "@/schema/products.schema";
 import ReuseableInput from "@/shared/ui/reuseableInput";
-import React, { ChangeEvent, FormEvent } from "react";
+import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import style from "./updateProductForm.module.css";
+
 interface Props {
   isLoading?: boolean;
   imagePath?: string;
   values?: ProductSchema;
-  setValues?: () => void;
+  setValues?: Dispatch<SetStateAction<ProductSchema>>;
   handleChange: (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
   handleSubmit: (e: FormEvent) => Promise<void>;
 }
-const UpdateProductForm = ({
-  values,
-  isLoading,
-  imagePath,
-  setValues,
-  handleChange,
-  handleSubmit,
-}: Props) => {
+const UpdateProductForm = ({ values, isLoading, imagePath, setValues, handleChange, handleSubmit }: Props) => {
   console.log(values);
   return (
     <>
@@ -134,22 +128,10 @@ const UpdateProductForm = ({
             placeHolder="Stock"
             onInput={handleChange}
           />
-          <ImageUpload
-            xsCol="12"
-            mdCol="12"
-            className="mb-3"
-            name="image"
-            setValue={() => setValues}
-          />
+          <ImageUpload xsCol="12" mdCol="12" className="mb-3" name="image" setValue={() => setValues} />
 
           <Col className="d-flex justify-content-end mt-2">
-            <Button
-              variant="dark"
-              className="px-4"
-              size="md"
-              type="submit"
-              disabled={isLoading}
-            >
+            <Button variant="dark" className="px-4" size="sm" type="submit" disabled={isLoading}>
               {isLoading ? "Updating..." : "Update Product"}
             </Button>
           </Col>

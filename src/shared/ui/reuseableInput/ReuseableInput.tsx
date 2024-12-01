@@ -26,14 +26,7 @@ const ReuseableInput = ({
 }: Props) => {
   return (
     <Col xs={xsCol} md={mdCol} lg={lgCol} className={className}>
-      <Form.Control
-        size={size}
-        type={type}
-        name={name}
-        value={value}
-        placeholder={placeHolder}
-        onChange={onInput}
-      />
+      <Form.Control size={size} type={type} name={name} value={value} placeholder={placeHolder} onChange={onInput} />
     </Col>
   );
 };

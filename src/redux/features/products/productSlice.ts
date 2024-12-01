@@ -17,14 +17,18 @@ export interface Product {
   stock: string;
 }
 
-interface ProductState {
+interface ProductStateProps {
   total: number;
   productList: Product[];
+  loading: boolean;
+  error: string | null;
 }
 
-const initialState: ProductState = {
+const initialState: ProductStateProps = {
   total: 0,
   productList: [],
+  loading: false,
+  error: null,
 };
 
 const productSlice = createSlice({

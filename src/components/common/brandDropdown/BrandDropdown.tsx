@@ -13,13 +13,7 @@ interface Brand {
   name?: string;
   image?: string;
 }
-const BrandDropdown = ({
-  defaultSelectText,
-  value,
-  name,
-  className,
-  onChange,
-}: Props) => {
+const BrandDropdown = ({ defaultSelectText, value, name, className, onChange }: Props) => {
   const { data, error, isLoading } = useGetBrandsListQuery({
     pageNo: 1,
     perPage: 50,
@@ -48,7 +42,7 @@ const BrandDropdown = ({
     >
       <option value="">{defaultSelectText}</option>
       {data?.data.map((brand: Brand) => (
-        <option key={brand._id} value={brand.id}>
+        <option key={brand._id} value={brand._id}>
           {brand.name}
         </option>
       ))}
