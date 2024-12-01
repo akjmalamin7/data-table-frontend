@@ -6,18 +6,15 @@
     "outDir": "./dist",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "moduleResolution": "Node",
-    "declaration": true, // ডিক্লারেশন ফাইল তৈরি হবে
+    "declaration": true, 
     "composite": true,
-    "strict": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
     "strict": true,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "target": "esnext",
-    "module": "esnext",
+    // "target": "esnext",
+    // "module": "esnext",
     "jsx": "react"
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "postinstall.js"],

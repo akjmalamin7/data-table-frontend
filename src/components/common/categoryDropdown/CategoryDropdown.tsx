@@ -15,6 +15,7 @@ interface Props {
   onChange?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 const CategoryDropdown = ({ defaultSelectText, value, name, className, size = "lg", onChange }: Props) => {
+  
   const { data, error, isLoading } = useGetCategoriesListQuery({
     pageNo: 1,
     perPage: 50,
@@ -31,7 +32,6 @@ const CategoryDropdown = ({ defaultSelectText, value, name, className, size = "l
   if (data?.data.length === 0) {
     return <p>Category not found!</p>;
   }
-
   return (
     <ReuseableSelect
       size={size}
@@ -44,7 +44,7 @@ const CategoryDropdown = ({ defaultSelectText, value, name, className, size = "l
     >
       <option value="">{defaultSelectText}</option>
       {data?.data.map((category: CategoryProps) => (
-        <option key={category._id} value={category._id}>
+        <option key={category._id} value={category.name}>
           {category.name}
         </option>
       ))}

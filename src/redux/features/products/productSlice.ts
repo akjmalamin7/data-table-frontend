@@ -17,7 +17,7 @@ export interface Product {
   stock: string;
 }
 
-interface ProductStateProps {
+export interface ProductStateProps {
   total: number;
   productList: Product[];
   loading: boolean;

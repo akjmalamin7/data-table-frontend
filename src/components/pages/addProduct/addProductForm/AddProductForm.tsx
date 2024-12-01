@@ -1,5 +1,5 @@
 import { ProductSchema } from "@/schema/products.schema";
-import ReuseableInput from "@/shared/ui/reuseableInput";
+import { ReuseableInput } from "@/shared/ui/reuseableInput";
 import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import BrandDropdown from "../../../common/brandDropdown";
@@ -100,7 +100,7 @@ const AddProductForm = ({
         {imagePath ? (
           <ImageViewer image={imagePath} />
         ) : (
-          <ImageUpload xsCol={12} mdCol={6} className="mb-3" name="image" setValue={() => setValues} />
+          <ImageUpload xsCol={12} mdCol={12} className="mb-3" name="image" setValue={() => setValues} />
         )}
 
         <Col className="d-flex justify-content-end mt-2">

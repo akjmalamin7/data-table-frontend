@@ -3,7 +3,7 @@ import CategoryDropdown from "@/components/common/categoryDropdown";
 import { ImageUpload } from "@/components/common/imageUpload";
 import ImageViewer from "@/components/common/ImageViewer";
 import { ProductSchema } from "@/schema/products.schema";
-import ReuseableInput from "@/shared/ui/reuseableInput";
+import { ReuseableInput } from "@/shared/ui/reuseableInput";
 import React, { ChangeEvent, Dispatch, FormEvent, SetStateAction } from "react";
 import { Button, Col, Row } from "react-bootstrap";
 import style from "./updateProductForm.module.css";
@@ -17,7 +17,7 @@ interface Props {
   handleSubmit: (e: FormEvent) => Promise<void>;
 }
 const UpdateProductForm = ({ values, isLoading, imagePath, setValues, handleChange, handleSubmit }: Props) => {
-  console.log(values);
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -51,12 +51,12 @@ const UpdateProductForm = ({ values, isLoading, imagePath, setValues, handleChan
           />
 
           <CategoryDropdown
-            className={style.option}
-            defaultSelectText="Select category"
             name="category"
-            size="lg"
             value={values?.category}
             onChange={handleChange}
+            className={style.option}
+            defaultSelectText="Select category"
+            size="lg"
           />
           <CategoryDropdown
             className={style.option}
@@ -128,7 +128,7 @@ const UpdateProductForm = ({ values, isLoading, imagePath, setValues, handleChan
             placeHolder="Stock"
             onInput={handleChange}
           />
-          <ImageUpload xsCol="12" mdCol="12" className="mb-3" name="image" setValue={() => setValues} />
+          <ImageUpload xsCol={12} mdCol={12} className="mb-3" name="image" setValue={() => setValues} />
 
           <Col className="d-flex justify-content-end mt-2">
             <Button variant="dark" className="px-4" size="sm" type="submit" disabled={isLoading}>

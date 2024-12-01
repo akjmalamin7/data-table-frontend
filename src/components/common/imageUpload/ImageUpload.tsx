@@ -1,8 +1,8 @@
-import { useUploadImageMutation } from "@/redux/features/image/imageAPI";
-import { ProductSchema } from "@/schema/products.schema";
-import ReuseableInput from "@/shared/ui/reuseableInput";
-import React, { ChangeEvent } from "react";
-import ErrorMessage from "../errorMessage/ErrorMessage";
+import { useUploadImageMutation } from "@/redux/features/image/imageAPI.js";
+import { ProductSchema } from "@/schema/products.schema.js";
+import ReuseableInput from "@/shared/ui/reuseableInput/ReuseableInput.js";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
+import ErrorMessage from "../errorMessage/ErrorMessage.js";
 
 interface Props {
   xsCol?: number;
@@ -12,7 +12,7 @@ interface Props {
   size?: "sm" | "lg";
   name?: string;
   value?: string;
-  setValue?: (prev: ProductSchema) => void;
+  setValue?: Dispatch<SetStateAction<ProductSchema>>;
 }
 const ImageUpload = ({ xsCol, mdCol, lgCol, size = "lg", name, value, className, setValue }: Props) => {
   const [uploadImage, { isLoading, error }] = useUploadImageMutation();
@@ -24,9 +24,9 @@ const ImageUpload = ({ xsCol, mdCol, lgCol, size = "lg", name, value, className,
         formData.append("image", file);
         const { data } = await uploadImage(formData).unwrap();
         if (data?.imgUrl && setValue) {
-          setValue((prev) => ({
+          setValue((prev:ProductSchema)=>({
             ...prev,
-            image: data?.imgUrl,
+            image:data?.imgUrl
           }));
         }
       } catch (err) {
@@ -48,7 +48,7 @@ const ImageUpload = ({ xsCol, mdCol, lgCol, size = "lg", name, value, className,
       lgCol={lgCol}
       type="file"
       name={name}
-      value={value}
+      value={value || ""}
       size={size}
       className={className}
       onInput={handleImageUpload}

@@ -42,7 +42,7 @@ const BrandDropdown = ({ defaultSelectText, value, name, className, onChange }: 
     >
       <option value="">{defaultSelectText}</option>
       {data?.data.map((brand: Brand) => (
-        <option key={brand._id} value={brand._id}>
+        <option key={brand._id} value={brand.name}>
           {brand.name}
         </option>
       ))}
