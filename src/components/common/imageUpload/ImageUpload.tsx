@@ -1,9 +1,8 @@
-import { useUploadImageMutation } from "@/redux/features/image/imageAPI.js";
-import { ProductSchema } from "@/schema/products.schema.js";
-import ReuseableInput from "@/shared/ui/reuseableInput/ReuseableInput.js";
-import { ChangeEvent, Dispatch, SetStateAction } from "react";
-import ErrorMessage from "../errorMessage/ErrorMessage.js";
-
+import { useUploadImageMutation } from "@/redux/features/image/imageAPI";
+import { ProductSchema } from "@/schema/products.schema";
+import ReuseableInput from "@/shared/ui/reuseableInput/ReuseableInput";
+import React, { ChangeEvent, Dispatch, SetStateAction } from "react";
+import ErrorMessage from "../errorMessage/ErrorMessage";
 interface Props {
   xsCol?: number;
   mdCol?: number;
@@ -35,7 +34,7 @@ const ImageUpload = ({ xsCol, mdCol, lgCol, size = "lg", name, value, className,
     }
   };
   if (isLoading) {
-    return <p>Loading....</p>;
+    return <h3>Loading....</h3>;
   }
 
   if (error) {

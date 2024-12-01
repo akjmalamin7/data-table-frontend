@@ -1,9 +1,4 @@
 import { apiSlice } from "@/redux/api/apiSlice";
-
-interface BrandsProps{
-    name:string;
-    image?:string;
-}
 const brandApi = apiSlice.injectEndpoints({
     endpoints:(builder)=>({
         addBrand:builder.mutation({
