@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2022",
-    "lib": ["ES2023"],
+    "target": "ESNext",
+    "lib": ["ESNext"],
     "module": "ESNext",
     "skipLibCheck": true,
 
@@ -11,7 +11,7 @@
     "allowImportingTsExtensions": false,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "noEmit": false, // 'noEmit' পরিবর্তন করে false রাখা হয়েছে
+    "noEmit": false, // 'noEmit' 
 
     /* Linting */
     "composite": true,
